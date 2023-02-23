@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Header";
+import "./App.css";
+import React from "react";
+import {Banner} from './Banner';
+import {Navbar} from './Navbar';
+import { ProductFeed } from "./components";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <>
+  <Header/>
+  <Navbar/>
+  <Banner/>
+  <ProductFeed/>
+  <p className="copy">@FlipkartUI created by kumar <FavoriteIcon style={{color:"red"}}/></p>
+
+  </>;
+
 }
 
 export default App;
