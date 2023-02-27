@@ -4,7 +4,9 @@ import React from "react";
 import {Banner} from './Banner';
 import {Navbar} from './Navbar';
 import { ProductFeed } from "./components";
-import FavoriteIcon from '@mui/icons-material/Favorite';
+
+import Footer from "./components/Footer";
+
 
 
 function App() {
@@ -13,7 +15,9 @@ function App() {
   <Navbar/>
   <Banner/>
   <ProductFeed/>
-  <p className="copy">@FlipkartUI created by kumar <FavoriteIcon style={{color:"red"}}/></p>
+  <Footer/>
+ 
+ 
 
   </>;
 

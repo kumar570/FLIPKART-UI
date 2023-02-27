@@ -31,22 +31,40 @@ const Cart = () => {
         setCart_total(total);
     }
    } 
-   return(
-    
-  <div>
-    {
-        data.map((product)=>{
-            <>
-            <h1>{product.name}</h1>
-            <img src={data.image}/>
-            </>
+   
+  
 
-        })
-}
-     <h1>cartpage</h1>  
-  </div>
+
+   return (
+		
+			
+
+ <>
+
+ <h1>loading.....</h1>
+ </>   
+             
         
-    )
+ 
+
+);
+
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    }
    
 

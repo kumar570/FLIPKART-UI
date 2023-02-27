@@ -42,6 +42,7 @@ export const getAllProducts = async () => {
 		headers: {
 			"X-Authorization": `Bearer ${token}`
 		}
+	
 	})
 
 	return response;

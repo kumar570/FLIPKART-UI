@@ -5,7 +5,7 @@ import { addToCartAPI, getAllProducts, loadCartProducts, removeFromCart } from "
 import "./Style.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import ReactPaginate from 'react-paginate';
 
 
 
@@ -13,6 +13,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 export const ProductFeed = () => {
 	const navigate = useNavigate();
 	const [products,setProducts]=useState([]);
+
+	const [totalRecords, setTotalRecords] = useState(0);
+  const [pageNum, setPageNum] = useState(1);
 	
 	
 	
@@ -74,6 +77,11 @@ export const ProductFeed = () => {
 
 
 return (
+
+
+
+	
+         
 		
 			
 
@@ -100,7 +108,23 @@ return (
 						)
 					})
 				}
+
+
+
+
+
+
+
+
+
 			</div>
+
+
+			
+
+
+
+
 		
 	);
 
