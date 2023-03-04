@@ -1,75 +1,43 @@
-import axios from 'axios'
-import React, { useState } from 'react'
-import { useEffect } from 'react'
-import { loadCartProducts } from '../api'
-
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { loadCartProducts } from "../api";
+import Footer from "./Footer";
+import { ProductFeed } from "./ProductFeed";
 
 const Cart = () => {
-    var total=0;
-    const[cart_total,setCart_total]=useState()
-    const token=localStorage.getItem("ECOM_TOKEN");
-    const[data,setData]=useState([])
+  var total = 0;
+  const [cart_total, setCart_total] = useState();
+  const token = localStorage.getItem("ECOM_TOKEN");
+  const [data, setData] = useState([]);
 
-    const loadCart=async ()=>{
-        const response=await loadCartProducts();
-       console.log(response);
-        setData(response.data)
-        
+  const loadCart = async () => {
+    const response = await loadCartProducts();
+    console.log(response);
+    setData(response.data);
+  };
 
-    }
+  useEffect(() => {
+    loadCart();
+    totalCart();
+  }, []);
 
-    useEffect(()=>{
-     loadCart()
-     totalCart()
-    },[])
-   
-   const totalCart=()=>{
+  const totalCart = () => {
     {
-        data.map((item)=>{
-            total=total+item.price;
-        })
-        setCart_total(total);
+      data.map((item) => {
+        total = total + item.price;
+      });
+      setCart_total(total);
     }
-   } 
-   
-  
+  };
 
+  return (
+    <>
+      <h1>loading.....</h1>
+      
+     
+    </>
+  );
+};
 
-   return (
-		
-			
-
- <>
-
- <h1>loading.....</h1>
- </>   
-             
-        
- 
-
-);
-
-                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   }
-   
-
-
-
-
-
-export default Cart
+export default Cart;

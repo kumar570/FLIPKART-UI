@@ -6,7 +6,7 @@ import "./Style.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ReactPaginate from 'react-paginate';
-
+import { toast } from "react-toastify";
 
 
 
@@ -23,7 +23,7 @@ export const ProductFeed = () => {
 
 	const loadProducts = async () => {
 		try {
-			const response = await getAllProducts();
+			const response = await loadCartProducts();
 			if (response.status == 200) {
 				setProducts(response.data)
 			}
@@ -45,6 +45,7 @@ export const ProductFeed = () => {
 				const response=await addToCartAPI(product_id)
 				if(response.status==200){
 					console.log(response.data);
+					toast.success("item added succesfully");
 				}
 				
 				
@@ -62,6 +63,7 @@ export const ProductFeed = () => {
 				const response=await removeFromCart(product_id)
 				if(response.status==200){
 					console.log(response.data);
+					toast.error("removed item succesfully")
 				}
 			}catch(error){
 				console.log(error,"===error");

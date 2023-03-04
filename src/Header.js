@@ -30,7 +30,7 @@ const Header = () => {
       </div>
       <div className="header_third">
         <button className="login">
-          <a href="../Login">Login</a>
+          <a href="../Login" style={{textDecoration:"none"}}>Login</a>
         </button>
 
         <button

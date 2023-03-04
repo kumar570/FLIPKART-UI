@@ -97,7 +97,9 @@ export const loadCartProducts=async()=>{
 		headers:{
 			"X-Authorization": `Bearer ${token}`
 		}
+		
 	})
+	
 	return response;
 }
 	
