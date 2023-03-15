@@ -16,7 +16,7 @@ function App() {
   <Header/>
   <Navbar/>
   <Banner/>
-  <h1 style={{color:"blue",display:"flex",textAlign:"center",marginLeft:"40%"}}>Please Login..<SentimentVerySatisfiedIcon style={{color:"yellow",fontSize:"50px"}}/></h1>
+  
  
   <ProductFeed/>
   <Footer/>

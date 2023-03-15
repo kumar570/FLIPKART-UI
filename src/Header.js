@@ -10,12 +10,26 @@ import { Login } from "./components/Login";
 import { ProductFeed } from "./components/ProductFeed";
 import { Cart } from "./components/Cart";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 
 const Header = () => {
+  const [searchText, setSearchText] = useState("mobile");
+  const[products,setProducts]=useState("products");
   const handleLogout = () => {
     localStorage.clear();
     window.location.reload();
   };
+  function filterData(searchText,products){
+    return(
+      <>
+      products.filter((p=>{
+      p.data.title.includes(searchText)
+      });
+  return title;
+      </>
+    )
+  }
   return (
     <div className="header" style={{ position: "sticky" }}>
       <div className="header_first">
@@ -25,12 +39,24 @@ const Header = () => {
         <img src={logo} style={{ width: "71px" }} />
       </div>
       <div className="header_second">
-        <input type="text" placeholder="search for any products or brands.." />
+        <input
+          type="text"
+          placeholder="search for any products or brands.."
+          value=""
+          onChange={(e) => {
+            setSearchText(e.target.value);
+            const data=filterData(searchText,products);
+            setProducts(data);
+          }}
+        />
         <SearchIcon />
+      
       </div>
       <div className="header_third">
         <button className="login">
-          <a href="../Login" style={{textDecoration:"none"}}>Login</a>
+          <a href="../Login" style={{ textDecoration: "none" }}>
+            Login
+          </a>
         </button>
 
         <button
