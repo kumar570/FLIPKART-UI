@@ -6,6 +6,8 @@ import {Navbar} from './Navbar';
 import { ProductFeed } from "./components";
 
 import Footer from "./components/Footer";
+import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
+import { yellow } from "@mui/material/colors";
 
 
 
@@ -14,8 +16,11 @@ function App() {
   <Header/>
   <Navbar/>
   <Banner/>
+  
+ 
   <ProductFeed/>
   <Footer/>
+ 
  
  
 
